@@ -1,0 +1,34 @@
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Style the custom checkbox */
+label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #4caf50; /* Green color */
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Style the checkmark */
+label::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+/* Show the checkmark when the checkbox is checked */
+input[type="checkbox"]:checked + label::after {
+  display: block;
+}
